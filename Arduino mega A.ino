@@ -3,14 +3,12 @@ int tasterstatus=0;
 
 int progCount = 0;
 
-int prog1Count = 0;
-int prog2Count = 0;
-int prog3Count =  0;
+int runprog = 0;
 
-int kek1 = 0 ;
-int kek2 = 0 ;
-int kek3 = 0 ; 
-
+int kek1 = 0;
+int kek2 = 0;
+int kek3 = 0;
+int kek4 = 0;
 
 unsigned long previousMillis = 0;
 const long interval = 1000;
@@ -48,6 +46,7 @@ void setup() {
   pinMode(14, OUTPUT);
   pinMode(15, OUTPUT);
   pinMode(16, OUTPUT);
+  pinMode(18, OUTPUT);
 
   pinMode(taster, INPUT);
 }
@@ -58,25 +57,53 @@ void loop() {
    
  tasterstatus=digitalRead(taster);
   if (tasterstatus == HIGH){
+    if(runprog == 0){
       progCount ++;
       if(progCount == 1){
-      digitalWrite(46, HIGH);
-      digitalWrite(14, HIGH);
-      delay(500);
-      digitalWrite(47, HIGH);
-      digitalWrite(46, LOW);
-      digitalWrite(14, LOW);
-      delay(500);
-      digitalWrite(48, HIGH);
-      digitalWrite(47, LOW);
-      delay(500);
-      digitalWrite(49, HIGH);
-      digitalWrite(48, LOW);
-       delay(500);
-      digitalWrite(50, HIGH);
-      digitalWrite(49, LOW);
+        kek1 = 1;
+        runprog = 1;
       }
       if(progCount == 2){
+        runprog = 1;
+        kek2 = 1;
+      
+      }
+      if(progCount == 3){
+      runprog = 1;
+      kek3 = 1;
+      }
+
+    if(tasterstatus == HIGH){
+     kek4 = 1; 
+    }else {
+      kek4 = 0;
+    }
+      if(kek1 == 1){
+        if(tasterstatus == 0){
+          runprog = 1;
+            digitalWrite(46, HIGH);
+            digitalWrite(14, HIGH);
+            delay(500);
+            digitalWrite(47, HIGH);
+            digitalWrite(46, LOW);
+            digitalWrite(14, LOW);
+            delay(500);
+            digitalWrite(48, HIGH);
+            digitalWrite(47, LOW);
+            delay(500);
+            digitalWrite(49, HIGH);
+            digitalWrite(48, LOW);
+             delay(500);
+            digitalWrite(50, HIGH);
+            digitalWrite(49, LOW);
+         runprog = 0;
+         kek1 = 0;
+        }
+      }
+
+      if(kek2 == 1){
+        if(tasterstatus == 0){
+          runprog = 1;
       digitalWrite(46, HIGH);
       digitalWrite(15, HIGH);
       delay(1000);
@@ -85,15 +112,21 @@ void loop() {
       digitalWrite(15, LOW);
       delay(1000);
       digitalWrite(48, HIGH);
-      digitalWrite(47, LOW);
+      digitalWrite(47, LOW);      
+      digitalWrite(48, LOW);
       delay(1000);
       digitalWrite(49, HIGH);
-      digitalWrite(48, LOW);
        delay(1000);
       digitalWrite(50, HIGH);
       digitalWrite(49, LOW);
+      runprog = 0;
+      kek2 = 0;
+        }
       }
-      if(progCount == 3){
+
+      if(kek3 == 3){
+        if(tasterstatus == 0){
+          runprog = 1;
       digitalWrite(46, HIGH);
       digitalWrite(15, HIGH);
       delay(200);
@@ -109,12 +142,19 @@ void loop() {
        delay(200);
       digitalWrite(50, HIGH);
       digitalWrite(49, LOW);
+      runprog = 0;
+      kek3 = 0;
+        }
       }
-  }
-
-  
-
+    }
     
-    
+     if(kek4 == 1){
       
+      digitalWrite(18,HIGH);
+      delay(200);
+      digitalWrite(18, LOW);
+      
+     }
+    
+}    
 }
