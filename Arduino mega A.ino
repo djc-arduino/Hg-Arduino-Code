@@ -58,8 +58,10 @@ void loop() {
    
  tasterstatus=digitalRead(taster);
   if (tasterstatus == HIGH){
-       digitalWrite(46, HIGH);
-       digitalWrite(14, HIGH);
+      progCount ++;
+      if(progCount == 1){
+      digitalWrite(46, HIGH);
+      digitalWrite(14, HIGH);
       delay(500);
       digitalWrite(47, HIGH);
       digitalWrite(46, LOW);
@@ -67,16 +69,52 @@ void loop() {
       delay(500);
       digitalWrite(48, HIGH);
       digitalWrite(47, LOW);
-              delay(500);
+      delay(500);
       digitalWrite(49, HIGH);
       digitalWrite(48, LOW);
-              delay(500);
+       delay(500);
       digitalWrite(50, HIGH);
       digitalWrite(49, LOW);
+      }
+      if(progCount == 2){
+      digitalWrite(46, HIGH);
+      digitalWrite(15, HIGH);
+      delay(1000);
+      digitalWrite(47, HIGH);
+      digitalWrite(46, LOW);
+      digitalWrite(15, LOW);
+      delay(1000);
+      digitalWrite(48, HIGH);
+      digitalWrite(47, LOW);
+      delay(1000);
+      digitalWrite(49, HIGH);
+      digitalWrite(48, LOW);
+       delay(1000);
+      digitalWrite(50, HIGH);
+      digitalWrite(49, LOW);
+      }
+      if(progCount == 3){
+      digitalWrite(46, HIGH);
+      digitalWrite(15, HIGH);
+      delay(200);
+      digitalWrite(47, HIGH);
+      digitalWrite(46, LOW);
+      digitalWrite(15, LOW);
+      delay(200);
+      digitalWrite(48, HIGH);
+      digitalWrite(47, LOW);
+      delay(200);
+      digitalWrite(49, HIGH);
+      digitalWrite(48, LOW);
+       delay(200);
+      digitalWrite(50, HIGH);
+      digitalWrite(49, LOW);
+      }
   }
+
+  
 
     
     
       
 }
-
