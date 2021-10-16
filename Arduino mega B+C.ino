@@ -1,5 +1,11 @@
-int taster=14;
-int tasterstatus=0;
+int taster1=14;
+int taster2=15;
+int taster3=16;
+
+int tasterstatus1=0;
+int tasterstatus2=0;
+int tasterstatus3=0;
+
 
 int progCount = 0;
 
@@ -48,33 +54,73 @@ void setup() {
   pinMode(15, OUTPUT);
   pinMode(16, OUTPUT);
 
-  pinMode(taster, INPUT);
+  pinMode(taster1, INPUT);
+  pinMode(taster2, INPUT);
+  pinMode(taster3, INPUT);
 }
 
 void loop() {
  currentMillis = millis();
 
    
- tasterstatus=digitalRead(taster);
-  if (tasterstatus == HIGH){
-       digitalWrite(46, HIGH);
+ tasterstatus1=digitalRead(taster1);
+ tasterstatus2=digitalRead(taster2);
+ tasterstatus3=digitalRead(taster3);
+  if (tasterstatus1 == HIGH){
+      digitalWrite(46, HIGH);
+      digitalWrite(14, HIGH);
       delay(500);
       digitalWrite(47, HIGH);
       digitalWrite(46, LOW);
+      digitalWrite(14, LOW);
       delay(500);
       digitalWrite(48, HIGH);
       digitalWrite(47, LOW);
-              delay(500);
+      delay(500);
       digitalWrite(49, HIGH);
       digitalWrite(48, LOW);
-              delay(500);
+       delay(500);
       digitalWrite(50, HIGH);
       digitalWrite(49, LOW);
   }
+  if (tasterstatus2 == HIGH){
+     digitalWrite(46, HIGH);
+      digitalWrite(15, HIGH);
+      delay(1000);
+      digitalWrite(47, HIGH);
+      digitalWrite(46, LOW);
+      digitalWrite(15, LOW);
+      delay(1000);
+      digitalWrite(48, HIGH);
+      digitalWrite(47, LOW);
+      delay(1000);
+      digitalWrite(49, HIGH);
+      digitalWrite(48, LOW);
+       delay(1000);
+      digitalWrite(50, HIGH);
+      digitalWrite(49, LOW);
+  }
+  if (tasterstatus3 == HIGH){
+    digitalWrite(46, HIGH);
+      digitalWrite(15, HIGH);
+      delay(200);
+      digitalWrite(47, HIGH);
+      digitalWrite(46, LOW);
+      digitalWrite(15, LOW);
+      delay(200);
+      digitalWrite(48, HIGH);
+      digitalWrite(47, LOW);
+      delay(200);
+      digitalWrite(49, HIGH);
+      digitalWrite(48, LOW);
+       delay(200);
+      digitalWrite(50, HIGH);
+      digitalWrite(49, LOW);
+  }
+  
 
     
     
       
 
 }
-
