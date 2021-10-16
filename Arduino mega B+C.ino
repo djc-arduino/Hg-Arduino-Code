@@ -6,24 +6,6 @@ int tasterstatus1=0;
 int tasterstatus2=0;
 int tasterstatus3=0;
 
-
-int progCount = 0;
-
-int prog1Count = 0;
-int prog2Count = 0;
-int prog3Count =  0;
-
-int kek1 = 0 ;
-int kek2 = 0 ;
-int kek3 = 0 ; 
-
-
-unsigned long previousMillis = 0;
-const long interval = 1000;
-
-unsigned long currentMillis ;
-
- 
 void setup() {
   pinMode(45, OUTPUT);
   pinMode(46, OUTPUT);
@@ -50,9 +32,6 @@ void setup() {
   pinMode(68, OUTPUT);
   pinMode(69, OUTPUT);
 
-  pinMode(14, OUTPUT);
-  pinMode(15, OUTPUT);
-  pinMode(16, OUTPUT);
 
   pinMode(taster1, INPUT);
   pinMode(taster2, INPUT);
@@ -60,19 +39,15 @@ void setup() {
 }
 
 void loop() {
- currentMillis = millis();
-
    
  tasterstatus1=digitalRead(taster1);
  tasterstatus2=digitalRead(taster2);
  tasterstatus3=digitalRead(taster3);
   if (tasterstatus1 == HIGH){
       digitalWrite(46, HIGH);
-      digitalWrite(14, HIGH);
       delay(500);
       digitalWrite(47, HIGH);
       digitalWrite(46, LOW);
-      digitalWrite(14, LOW);
       delay(500);
       digitalWrite(48, HIGH);
       digitalWrite(47, LOW);
@@ -85,11 +60,9 @@ void loop() {
   }
   if (tasterstatus2 == HIGH){
      digitalWrite(46, HIGH);
-      digitalWrite(15, HIGH);
       delay(1000);
       digitalWrite(47, HIGH);
       digitalWrite(46, LOW);
-      digitalWrite(15, LOW);
       delay(1000);
       digitalWrite(48, HIGH);
       digitalWrite(47, LOW);
@@ -102,11 +75,9 @@ void loop() {
   }
   if (tasterstatus3 == HIGH){
     digitalWrite(46, HIGH);
-      digitalWrite(15, HIGH);
       delay(200);
       digitalWrite(47, HIGH);
       digitalWrite(46, LOW);
-      digitalWrite(15, LOW);
       delay(200);
       digitalWrite(48, HIGH);
       digitalWrite(47, LOW);
