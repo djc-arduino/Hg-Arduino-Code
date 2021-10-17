@@ -73,9 +73,9 @@ void loop() {
       }
       if(progCount == 2){
          runprog = 1;
-       digitalWrite(14, HIGH);
+       digitalWrite(15, HIGH);
         delay(200);
-        digitalWrite(14, LOW);
+        digitalWrite(15, LOW);
         for (int i = 45; i <= 69; i++) {
         digitalWrite(i, HIGH);
         digitalWrite(i - 1 , LOW);
@@ -85,9 +85,9 @@ void loop() {
       }
       if(progCount == 3){
       runprog = 1;
-      digitalWrite(14, HIGH);
+      digitalWrite(16, HIGH);
         delay(200);
-        digitalWrite(14, LOW);
+        digitalWrite(16, LOW);
         for (int i = 45; i <= 69; i++) {
         digitalWrite(i, HIGH);
         digitalWrite(i - 1 , LOW);
