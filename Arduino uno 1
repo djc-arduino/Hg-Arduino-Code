@@ -1,107 +1,60 @@
-int taster=13;
-int tasterstatus=0;
+int taster1=12;
+int taster2=11;
+int taster3=10;
 
-int progCount = 0;
+int tasterstatus1=0;
+int tasterstatus2=0;
+int tasterstatus3=0;
 
-int runprog = 0;
-
-int kek1 = 0;
-int kek2 = 0;
-int kek3 = 0;
-int kek4 = 0;
-
-unsigned long previousMillis = 0;
-const long interval = 1000;
-
-unsigned long currentMillis ;
-
- 
 void setup() {
-  
-  pinMode(45, OUTPUT);
-  pinMode(46, OUTPUT);
-  pinMode(47, OUTPUT);
-  pinMode(48, OUTPUT);
-  pinMode(49, OUTPUT);
-  pinMode(50, OUTPUT);
-  pinMode(51, OUTPUT);
-  pinMode(52, OUTPUT);
-  pinMode(53, OUTPUT);
-  pinMode(54, OUTPUT);
-  pinMode(55, OUTPUT);
-  pinMode(56, OUTPUT);
-  pinMode(57, OUTPUT);
-  pinMode(58, OUTPUT);
-  pinMode(59, OUTPUT);
-  pinMode(60, OUTPUT);
-  pinMode(61, OUTPUT);
-  pinMode(63, OUTPUT);
-  pinMode(64, OUTPUT);
-  pinMode(65, OUTPUT);
-  pinMode(66, OUTPUT);
-  pinMode(67, OUTPUT);
-  pinMode(68, OUTPUT);
-  pinMode(69, OUTPUT);
+  pinMode(0, OUTPUT);
+  pinMode(1, OUTPUT);
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
 
-  pinMode(14, OUTPUT);
-  pinMode(15, OUTPUT);
-  pinMode(16, OUTPUT);
-  pinMode(18, OUTPUT);
 
-  pinMode(taster, INPUT);
+  pinMode(taster1, INPUT);
+  pinMode(taster2, INPUT);
+  pinMode(taster3, INPUT);
 }
 
 void loop() {
- currentMillis = millis();
-
    
- tasterstatus=digitalRead(taster);
-  if(runprog == 0){
-  if (tasterstatus == HIGH){
-    while(kek1 < 2 ) {
-    kek1 = 2 ;
-    progCount ++;
-if(progCount == 1){
-        runprog = 1;
-        
-      for (int i = 45; i <= 69; i++) {
+ tasterstatus1=digitalRead(taster1);
+ tasterstatus2=digitalRead(taster2);
+ tasterstatus3=digitalRead(taster3);
+  if (tasterstatus1 == HIGH){
+            for (int i = 0; i <= 7; i++) {
         digitalWrite(i, HIGH);
-        digitalWrite(i - 1, LOW);
         delay(3000);
       }
+  }
 
-     runprog = 0;
-      }
-      if(progCount == 2){
-        runprog = 1;
-        
-      for (int i = 45; i <= 69; i++) {
+  
+  if (tasterstatus2 == HIGH){
+           for (int i = 0; i <= 7; i++) {
         digitalWrite(i, HIGH);
-        digitalWrite(i - 1, LOW);
+        digitalWrite(i , LOW);
         delay(3000);
       }
+  }
+
+  
+  if (tasterstatus3 == HIGH){
+         for (int i = 0; i <= 7; i++) {
+        digitalWrite(i, HIGH);
+        digitalWrite(i , LOW);
+        delay(3000);
+      }
+  }
+  
 
     
-      runprog = 0;
-      }
-      if(progCount == 3){
-      runprog = 1;
+    
       
-      for (int i = 45; i <= 69; i++) {
-        digitalWrite(i, HIGH);
-        digitalWrite(i - 1, LOW);
-        delay(3000);
-      }
-     
-      runprog = 0;
-      progCount == 0;
-      }
-    }
-    }
-    else
-    {
-    kek1 = 1 ;
-    }
 
-}   
-}    
+}
