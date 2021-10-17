@@ -44,49 +44,25 @@ void loop() {
  tasterstatus2=digitalRead(taster2);
  tasterstatus3=digitalRead(taster3);
   if (tasterstatus1 == HIGH){
-      digitalWrite(46, HIGH);
-      delay(500);
-      digitalWrite(47, HIGH);
-      digitalWrite(46, LOW);
-      delay(500);
-      digitalWrite(48, HIGH);
-      digitalWrite(47, LOW);
-      delay(500);
-      digitalWrite(49, HIGH);
-      digitalWrite(48, LOW);
-       delay(500);
-      digitalWrite(50, HIGH);
-      digitalWrite(49, LOW);
+      for (int i = 45; i <= 69; i++) {
+        digitalWrite(i, HIGH);
+        digitalWrite(i - 1 , LOW);
+        delay(3000);
+      }
   }
   if (tasterstatus2 == HIGH){
-     digitalWrite(46, HIGH);
-      delay(1000);
-      digitalWrite(47, HIGH);
-      digitalWrite(46, LOW);
-      delay(1000);
-      digitalWrite(48, HIGH);
-      digitalWrite(47, LOW);
-      delay(1000);
-      digitalWrite(49, HIGH);
-      digitalWrite(48, LOW);
-       delay(1000);
-      digitalWrite(50, HIGH);
-      digitalWrite(49, LOW);
+     for (int i = 45; i <= 69; i++) {
+        digitalWrite(i, HIGH);
+        digitalWrite(i - 1 , LOW);
+        delay(3000);
+      }
   }
   if (tasterstatus3 == HIGH){
-    digitalWrite(46, HIGH);
-      delay(200);
-      digitalWrite(47, HIGH);
-      digitalWrite(46, LOW);
-      delay(200);
-      digitalWrite(48, HIGH);
-      digitalWrite(47, LOW);
-      delay(200);
-      digitalWrite(49, HIGH);
-      digitalWrite(48, LOW);
-       delay(200);
-      digitalWrite(50, HIGH);
-      digitalWrite(49, LOW);
+    for (int i = 45; i <= 69; i++) {
+        digitalWrite(i, HIGH);
+        digitalWrite(i - 1 , LOW);
+        delay(3000);
+      }
   }
   
 
