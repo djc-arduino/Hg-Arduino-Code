@@ -60,101 +60,43 @@ void loop() {
     if(runprog == 0){
       progCount ++;
       if(progCount == 1){
-        kek1 = 1;
-        runprog = 1;
+         runprog = 1;
+        digitalWrite(14, HIGH);
+        delay(200);
+        digitalWrite(14, LOW);
+        for (int i = 45; i <= 69; i++) {
+        digitalWrite(i, HIGH);
+        digitalWrite(i - 1 , LOW);
+        delay(3000);
+      }
+        runprog = 0;
       }
       if(progCount == 2){
-        runprog = 1;
-        kek2 = 1;
-      
+         runprog = 1;
+       digitalWrite(14, HIGH);
+        delay(200);
+        digitalWrite(14, LOW);
+        for (int i = 45; i <= 69; i++) {
+        digitalWrite(i, HIGH);
+        digitalWrite(i - 1 , LOW);
+        delay(3000);
+      }
+       runprog = 0;
       }
       if(progCount == 3){
       runprog = 1;
-      kek3 = 1;
+      digitalWrite(14, HIGH);
+        delay(200);
+        digitalWrite(14, LOW);
+        for (int i = 45; i <= 69; i++) {
+        digitalWrite(i, HIGH);
+        digitalWrite(i - 1 , LOW);
+        delay(3000);
+      }
+       runprog = 0;
       }
 
-    if(tasterstatus == HIGH){
-     kek4 = 1; 
-    }else {
-      kek4 = 0;
+  
     }
-      if(kek1 == 1){
-        if(tasterstatus == 0){
-          runprog = 1;
-            digitalWrite(46, HIGH);
-            digitalWrite(14, HIGH);
-            delay(500);
-            digitalWrite(47, HIGH);
-            digitalWrite(46, LOW);
-            digitalWrite(14, LOW);
-            delay(500);
-            digitalWrite(48, HIGH);
-            digitalWrite(47, LOW);
-            delay(500);
-            digitalWrite(49, HIGH);
-            digitalWrite(48, LOW);
-             delay(500);
-            digitalWrite(50, HIGH);
-            digitalWrite(49, LOW);
-         runprog = 0;
-         kek1 = 0;
-        }
-      }
-
-      if(kek2 == 1){
-        if(tasterstatus == 0){
-          runprog = 1;
-      digitalWrite(46, HIGH);
-      digitalWrite(15, HIGH);
-      delay(1000);
-      digitalWrite(47, HIGH);
-      digitalWrite(46, LOW);
-      digitalWrite(15, LOW);
-      delay(1000);
-      digitalWrite(48, HIGH);
-      digitalWrite(47, LOW);      
-      digitalWrite(48, LOW);
-      delay(1000);
-      digitalWrite(49, HIGH);
-       delay(1000);
-      digitalWrite(50, HIGH);
-      digitalWrite(49, LOW);
-      runprog = 0;
-      kek2 = 0;
-        }
-      }
-
-      if(kek3 == 3){
-        if(tasterstatus == 0){
-          runprog = 1;
-      digitalWrite(46, HIGH);
-      digitalWrite(15, HIGH);
-      delay(200);
-      digitalWrite(47, HIGH);
-      digitalWrite(46, LOW);
-      digitalWrite(15, LOW);
-      delay(200);
-      digitalWrite(48, HIGH);
-      digitalWrite(47, LOW);
-      delay(200);
-      digitalWrite(49, HIGH);
-      digitalWrite(48, LOW);
-       delay(200);
-      digitalWrite(50, HIGH);
-      digitalWrite(49, LOW);
-      runprog = 0;
-      kek3 = 0;
-        }
-      }
-    }
-    
-     if(kek4 == 1){
-      
-      digitalWrite(18,HIGH);
-      delay(200);
-      digitalWrite(18, LOW);
-      
-     }
-    
 }    
 }
