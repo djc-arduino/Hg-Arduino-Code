@@ -54,13 +54,20 @@ void setup() {
 void loop() {
  currentMillis = millis();
 
+
+
    
- tasterstatus=digitalRead(taster);
-  if (tasterstatus == HIGH){
-    if(runprog == 0){
-      progCount ++;
+tasterstatus=digitalRead(taster);
+if (tasterstatus == HIGH)
+{
+while(kek1 < 2 ) {
+kek1 = 2 ;
+progCount ++;
+
+if(runprog == 0){
+      
       if(progCount == 1){
-         runprog = 1;
+         progCount = 1;
         digitalWrite(14, HIGH);
         delay(200);
         digitalWrite(14, LOW);
@@ -98,5 +105,14 @@ void loop() {
 
   
     }
-}    
+
 }
+}
+else
+{
+ 
+kek1 = 1 ;
+}
+
+    
+}    
