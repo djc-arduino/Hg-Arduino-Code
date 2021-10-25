@@ -1,6 +1,6 @@
 int taster1=12;
 int taster2=11;
-int taster3=10;
+int taster3=160;
 
 int tasterstatus1=0;
 int tasterstatus2=0;
@@ -15,11 +15,16 @@ void setup() {
   pinMode(5, OUTPUT);
   pinMode(6, OUTPUT);
   pinMode(7, OUTPUT);
-
-
+  
   pinMode(taster1, INPUT);
   pinMode(taster2, INPUT);
   pinMode(taster3, INPUT);
+
+
+  for(int k = 0; k <= 7; k ++){
+    digitalWrite(k, HIGH);
+  }
+  
 }
 
 void loop() {
@@ -28,31 +33,100 @@ void loop() {
  tasterstatus2=digitalRead(taster2);
  tasterstatus3=digitalRead(taster3);
   if (tasterstatus1 == HIGH){
-            for (int i = 0; i <= 7; i++) {
-        digitalWrite(i, HIGH);
-        delay(3000);
-      }
-  }
-
-  
-  if (tasterstatus2 == HIGH){
-           for (int i = 0; i <= 7; i++) {
-        digitalWrite(i, HIGH);
-        digitalWrite(i , LOW);
-        delay(3000);
-      }
-  }
-
-  
-  if (tasterstatus3 == HIGH){
-         for (int i = 0; i <= 7; i++) {
-        digitalWrite(i, HIGH);
-        digitalWrite(i , LOW);
-        delay(3000);
-      }
-  }
-  
-
+    delay(10000);
+    delay(200);
+    digitalWrite(3, HIGH);
+    digitalWrite(7, LOW);
+    delay(1000); //1
     
+    delay(1000); //2
+
+    delay(1000);//3
+    
+    delay(1000);//4
+    
+    delay(1000);//5
+    
+    delay(1000);//6
+    digitalWrite(4, LOW);
+    delay(1000);//7
+    
+    delay(1000);//8
+    
+    delay(1000);//9
+    digitalWrite(5, LOW);
+    delay(1000);//10
+ 
+    delay(1000);//11
+    
+    delay(1000);//12
+    digitalWrite(6, LOW);
+    delay(1000);//13
+    
+    delay(1000);//14
+    digitalWrite(2, LOW);
+    digitalWrite(0, LOW);
+    delay(1000);//15
+    
+    delay(1000);//16
+     
+    delay(1000);//17
+    digitalWrite(1, LOW);
+    delay(1000);//18
+
+    delay(1000);//19
+    
+    delay(1000);//20
+    
+    delay(1000);//21
+
+    delay(1000);//22
+    
+    delay(1000);//23
+    
+    delay(1000);//24
+    
+    delay(1000);//25
+
+    delay(1000);//27
+    
+    delay(1000);//28
+
+    delay(1000);//29
+    
+    delay(1000);//30
+    digitalWrite(1, HIGH);
+    delay(1000);//31
    
+    delay(1000);//32
+
+    delay(1000);//33
+
+    delay(1000);//34
+    
+    delay(1000);//35
+
+    delay(1000);//36
+
+    delay(1000);//37
+    
+    delay(1000);//38
+    
+    delay(1000);//39
+    
+    delay(1000);//40
+    
+    delay(1000);//42
+    
+    delay(1000);//43
+   
+    for(int k 0 =; k <= 7; k ++){
+    digitalWrite(k, HIGH);
+  }
+  digitalWrite(3, LOW);
+  }
+ 
+     
+      
+
 }
